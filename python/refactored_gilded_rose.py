@@ -1,4 +1,4 @@
-# GildedRose class is instantiate to call update_quality method that calls the indivity update_item_quality method with a for loop. Each item has its methods with logic to update the quality and sell_in date
+# GildedRose class calls update_quality which internally calls update_item_quality with a for loop. Each item has its methods with logic to update the quality and sell_in date
 class GildedRose:
     def __init__(self, items):
         self.items = items
@@ -6,7 +6,7 @@ class GildedRose:
     def update_quality(self):
         for item in self.items:
             if item.name != "Sulfuras" and item.quality > 50:
-                    item.quality = 50
+                item.quality = 50
             self.update_item_quality(item)
 
     def update_item_quality(self, item):
@@ -21,15 +21,12 @@ class GildedRose:
         elif item.name == "Conjured":
             self.update_conjured(item)
 
-
     # Item quality increases by 1 every day regardless of sell in date and goes upto 50
     def update_aged_brie(self, item):
         item.sell_in -= 1
         if item.quality < 50:
             item.quality += 1
-        if item.sell_in < 0 and item.quality < 50:
-            item.quality += 1
-    
+
     # Item quality increase by 1 every day, increase by 2 if sell in less than 10 and increase by 3 if sll in less than 5. quality drops to 0 if sellin is less than 0
     def update_backstage_passes(self, item):
         item.sell_in -= 1
@@ -43,23 +40,18 @@ class GildedRose:
             else:
                 item.quality += 1
 
-
     # Item quality degrades by 1 every day and this runs until item quality reaches zero
     def update_normal_item(self, item):
         if item.sell_in > 0 and item.quality < 50:
             item.sell_in -= 1
             if item.quality > 0:
                 item.quality -= 1
-            if item.sell_in < 0 and item.quality > 0:
-                item.quality -= 1
-    
+
     # Item quality degrades by 2 every day and this runs until item quality reaches zero
     def update_conjured(self, item):
         if item.sell_in > 0 and item.quality <= 50:
             item.sell_in -= 1
             if item.quality > 0:
-                item.quality -= 2
-            if item.sell_in < 0 and item.quality > 0:
                 item.quality -= 2
 
 
@@ -72,26 +64,3 @@ class Item:
 
     def __repr__(self):
         return "%s, %s, %s" % (self.name, self.sell_in, self.quality)
-
-# This is the main method, we are creating instances of Item class and passing to item list
-# Then we create GildedRose class intance with items list which has the update quality methods and in turn respective item methods are called and updated
-if __name__ == "__main__":
-    items = [
-        Item("Aged Brie", 0, 51),
-        Item("Backstage passes", 4, 20),
-        Item("Sulfuras", 10, 80),
-        Item("Normal Item", 5, 25),
-        Item("Conjured", 3, 50)   
-    ]
-
-    gilded_rose = GildedRose(items)
-
-    print("current Items:")
-    for item in items:
-        print(item)
-
-    gilded_rose.update_quality()
-
-    print("\ncurrent Items after one day:")
-    for item in items:
-        print(item)

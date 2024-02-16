@@ -11,25 +11,24 @@ For this Assignment we have used following tools,
 4. Python - We choose python as our programming language
 
 # Video recordings of mob programming
-This video recordings covers multiple session in which we brainstormed which programming language to use and how it works. We discussed the requirement and development strategy and test scenarios.
+This video recordings covers multiple sessions in which we brainstormed which programming language to use and how it works. We discussed the requirement and development strategy and test scenarios.
 We refactored our code during the session and made changes to it and ran multiple tests and reduced as much code smells.
 
-Video link of the mob programming session, 
+First session: [click here to see recording on vimeo](https://vimeo.com/913707923)
 
-https://kennesawedu.sharepoint.com/:v:/s/Team-SWE6733Group3/ETuVjIqdxT1Nh4CfLJ344wABmqH0sEKEtnRNzgI8LaM5RQ
-https://kennesawedu.sharepoint.com/:v:/s/Team-SWE6733Group3/EcbLVewK_sdKlkY6atvlBUcBspbwjwU2Vmo3j9r_tBJpfA
-
+Second session: [click here to see recording on vimeo](https://vimeo.com/913708064)
 
 # Code Coverage
-Code coverage is run and it stands at 88%. Screenshot is updated in the file name code-coverage.png
+![](assets/code-coverage.png)
 
 
 # Unit Testing
 
 Unit test cases are run using python unit test module. Test cases are in the file unit_test.py. we successfully ran 5 test cases for each item.
-screenshot is uploaded in the file name test-results.png
+
+![](assets/test-results.png)
 
 
 # TDD
 
-We followed test driven development by adding new tems and conjured items, tested how the sell_in and quality values changed for each scenario and made changes to the code.
+We followed test driven development by adding new terms and conjured items, tested how the sell_in and quality values changed for each scenario and made changes to the code.
