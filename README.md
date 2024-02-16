@@ -1,5 +1,5 @@
-# s24swe6733
-Group Assignment for SWE 6733 Spring 2024
+# Assignment 2
+Group III's  Assignment 2 for SWE 6733 Spring 2024
 
 Gilded Rose is a small inn with and it has inventory of items that needs to update with its quality as it goes with sell in date. This mob programming is to learn how to refactor this code with testing.
 For this Assignment we have used following tools,
